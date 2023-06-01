@@ -20,6 +20,18 @@ class MainActivity : AppCompatActivity() {
         R.drawable.pak_009,
         R.drawable.pak_010,
     )
+    private val nameIdList = listOf(
+        "Bulbasaur",
+        "Ivysaur",
+        "Venusaur",
+        "Charmander",
+        "Charmeleon",
+        "Charizard",
+        "Squirtle",
+        "Wartortle",
+        "Blastoise",
+        "Caterpie",
+    )
     private var index = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +44,8 @@ class MainActivity : AppCompatActivity() {
             rcView.layoutManager = GridLayoutManager(this@MainActivity,3)
             rcView.adapter = adapter
             btnAdd.setOnClickListener {
-                if (index > 6) index = 0
-                var plant = Plant(imageIdList[index], "Pokemin $index")
+                if (index > 9) index = 0
+                var plant = Plant(imageIdList[index], nameIdList[index])
                 adapter.addPlant(plant)
                 index++
             }
